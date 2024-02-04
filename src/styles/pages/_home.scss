@@ -1,0 +1,66 @@
+.home {
+	.hero {
+		position: relative;
+		height: 300px;
+
+		background-image: url('/images/bank-tree.jpeg');
+		background-position: 0 -50px;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		@include responsive("desktop", $type: "min") {
+			height: 400px;
+			background-position: 0% 33%;
+		}
+
+		&-content {
+			position: relative;
+
+			padding: 2rem;
+			margin: 0 auto;
+
+			top: 2rem;
+			width: 200px;
+
+			background: white;
+			text-align: left;
+
+			.subtitle {
+				margin: 0;
+				font-weight: bold;
+				font-size: 1rem;
+			}
+
+			.text {
+				margin-top: 14px;
+				margin-bottom: 0;
+				font-size: 0.9rem;
+			}
+
+			@include responsive("desktop", $type: "min") {
+				position: absolute;
+				margin: 2rem;
+				width: 300px;
+				top: 50px;
+				right: 50px;
+
+				.subtitle {
+					font-size: 1.5rem;
+				}
+
+				.text {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+
+	.features {
+		display: flex;
+		flex-direction: column;
+
+		@include responsive("desktop", $type: "min") {
+			flex-direction: row;
+		}
+	}
+}

@@ -6,9 +6,11 @@
 @import "./base/base";
 
 // Components Importation
+@import "./components/featureItem";
 
 // Layouts Importation
 @import "./layouts/navbar";
 @import "./layouts/footer";
 
 // Pages Importation
+@import "./pages/home";

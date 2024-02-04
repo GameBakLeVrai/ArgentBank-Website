@@ -12,7 +12,6 @@
 }
 
 * {
-	margin: 0;
 	padding: 0;
 
 	font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -20,7 +19,6 @@
 	-moz-osx-font-smoothing: grayscale;
 	
 	color: #2c3e50;
-	box-sizing: border-box;
 
 	// Remove element selections
 	-webkit-touch-callout: none;
@@ -31,6 +29,16 @@
 	user-select: none;
 }
 
+body {
+	margin: 0;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+
+	text-align: center;
+}
+
 // Remove list style
 ul {
 	list-style-type: none;
@@ -39,6 +47,24 @@ ul {
 // Remove link sublines
 a {
 	text-decoration: none;
+}
+
+main {
+	flex: 1;
+}
+
+// Source : https://www.lalutineduweb.fr/alternatives-textuelles-texte-masque-css/
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+			clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
 }
 
 /* ----------- Custom ScrollBar ----------- */
