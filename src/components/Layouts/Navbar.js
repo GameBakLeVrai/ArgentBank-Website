@@ -12,7 +12,7 @@ const Navbar = () => {
 			</Link>
 
 			<div>
-				<Link className="main-nav-item" to="/sign-in">
+				<Link className="main-nav-item" to="/login">
 					<ProfileImg />
 					Sign In
 				</Link>
