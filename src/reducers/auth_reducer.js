@@ -1,7 +1,7 @@
 import { STATE } from "../actions/types";
 
 const initialState = {
-	isAuthenticated: false
+	isAuthenticated: (localStorage.getItem("token")) ? true : false
 };
 
 const authReducer = (state = initialState, action) => {

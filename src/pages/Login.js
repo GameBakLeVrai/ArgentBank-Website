@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 import { login } from "../actions/auth_action";
 
-import ProfileImg from "../images/profileImg";
-
 const Login = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -32,7 +30,7 @@ const Login = () => {
 	return (
 		<main className="main bg-dark">
 			<section className="sign-in">
-				<ProfileImg />
+				<i className="fa fa-user-circle sign-in-icon"></i>
 				<h1>Sign In</h1>
 
 				<form>
