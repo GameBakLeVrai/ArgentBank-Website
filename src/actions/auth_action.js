@@ -1,12 +1,7 @@
 import axios from "axios";
 
 import { STATE } from "./types";
-
-const config = {
-	headers: {
-		"Content-Type": "application/json",
-	},
-};
+import { config } from ".";
 
 export const login = (username, password) => async (dispatch) => {
 	const data = {
@@ -17,14 +12,21 @@ export const login = (username, password) => async (dispatch) => {
 	const response = await axios.post(`${process.env.REACT_APP_API_URL}/user/login`, data, config);
 
 	// Error Management
-	if(response.status !== 200) return dispatch({ type: STATE.AUTH.LOGIN.FAILED, error: response.data });
+	if(response.status !== 200) return dispatch({ type: STATE.LOGIN.FAILED, error: response.data });
 	const token = response.data.body.token;
 
 	localStorage.setItem("token", token);
-	dispatch({ type: STATE.AUTH.LOGIN.SUCCESS });
+	axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+	dispatch({ type: STATE.LOGIN.SUCCESS });
 };
 
-export const logout = () => (dispatch) => {
+export const logout = () => async (dispatch) => {
 	localStorage.removeItem("token");
-	dispatch({ type: STATE.AUTH.LOGIN.LOGOUT });
+	localStorage.removeItem("user");
+
+	dispatch({ type: STATE.LOGIN.LOGOUT });
+	dispatch({ type: STATE.USER.RESET });
+
+	delete axios.defaults.headers.common['Authorization'];
 };

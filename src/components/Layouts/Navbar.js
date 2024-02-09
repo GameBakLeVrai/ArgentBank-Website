@@ -10,6 +10,7 @@ const Navbar = () => {
 	const navigate = useNavigate();
 
 	const { isAuthenticated } = useSelector((state) => state.auth);
+	const { user } = useSelector((state) => state.user);
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -30,7 +31,16 @@ const Navbar = () => {
 			</Link>
 
 			<div>
-				<Link className="main-nav-item" to={"#"} onClick={handleClick}>
+				{(isAuthenticated) && (
+					(user !== null) && (
+						<Link className="main-nav-item" to={"/profile"}>
+							<i className="fa fa-user-circle sign-in-icon"></i>
+							{user.firstName}
+						</Link>
+					)
+				)}
+
+				<Link className="main-nav-item" to={(isAuthenticated) ? "/logout" : "/login"} onClick={handleClick}>
 					{(isAuthenticated) ? 
 					(<>
 						<i className="fa fa-sign-out"></i>

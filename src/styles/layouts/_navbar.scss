@@ -2,6 +2,10 @@
     padding: 5px 20px;
     @include flexbox($justify: space-between, $align: center);
 
+    div:nth-child(2) {
+        @include flexbox();
+    }
+
     a {
         font-weight: bold;
         color: #2c3e50;
