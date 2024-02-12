@@ -25,7 +25,6 @@ export const updateProfile = ({ firstName, lastName }) => async (dispatch) => {
 
 	// Error Management
 	if(response.status !== 200) return dispatch({ type: STATE.USER.FAILED, error: response.data.message });
-	localStorage.removeItem("user");
 
 	const newInfos = await axios.post(`${process.env.REACT_APP_API_URL}/user/profile`);
 
