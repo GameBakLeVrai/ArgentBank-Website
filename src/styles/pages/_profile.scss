@@ -13,5 +13,28 @@
 			background-color: #00bc77;
 			border-color: #00bc77;
 		}
+
+		.profile-edit {
+			margin-top: 20px;
+			@include flexbox($justify: center, $align: center, $gap: 10px);
+
+			div {
+				@include flexbox($direction: column, $align: flex-end, $gap:10px);
+
+				input[type="text"] {
+					padding: 10px;
+					outline: none;
+
+					@include text($fontSize: 1.1rem, $fontWeight: bold);
+
+					border: 3px solid #00bc77;
+					border-radius: 5px;
+				}
+
+				button {
+					width: 85px;
+				}
+			}
+		}
 	}
 }

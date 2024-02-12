@@ -45,8 +45,7 @@
 			
 			width: 100%;
 			
-			font-size: 1.1rem;
-			font-weight: bold;
+			@include text($fontSize: 1.1rem, $fontWeight: bold);
 			
 			color: #fff;
 			background-color: #00bc77;

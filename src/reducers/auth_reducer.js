@@ -1,6 +1,7 @@
 import { STATE } from "../actions/types";
 
 const initialState = {
+	token: (localStorage.getItem("token")) ? localStorage.getItem("token") : "",
 	isAuthenticated: (localStorage.getItem("token")) ? true : false
 };
 

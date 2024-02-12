@@ -20,6 +20,12 @@ const userReducer = (state = initialState, action) => {
 				isLoaded: false,
 			};
 
+		case STATE.USER.MODIFIED:
+			return {
+				...state,
+				user: action.infos
+			};
+
 		default:
 			return state;
 	}
