@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import axios from "axios";
+
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -11,8 +14,21 @@ import Profile from "./pages/Profile";
 
 import Navbar from "./components/Layouts/Navbar";
 import Footer from "./components/Layouts/Footer";
+import store from "./store/store";
 
 function App() {
+	useEffect(() => {
+		const token = localStorage.getItem('token');
+
+		if(store.getState().auth.isAuthenticated && axios.defaults.headers.common['Authorization'] === undefined) {
+			if(token) axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+		}
+
+		return () => {
+			delete axios.defaults.headers.common['Authorization'];
+		};
+	}, []);
+
 	return (
 		<Router>
 			<Navbar />
