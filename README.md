@@ -1,6 +1,6 @@
 # ArgentBank - Website
 
-SportSee, a platform dedicated to online sports coaching and performance monitoring. 
+Argent Bank, which is trying to succeed in the banking sector, needs help to set up its application.
 
 ## Background of Project
 
