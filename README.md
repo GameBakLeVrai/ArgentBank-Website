@@ -1,4 +1,19 @@
-# Back-End 
+# ArgentBank - Website
+
+SportSee, a platform dedicated to online sports coaching and performance monitoring. 
+
+## Background of Project
+
+- We were awarded a two-part contract, broken down into several phases:
+
+    - Phase 1: User authentication - Creation of a web application enabling customers to log in and manage their accounts and profiles.
+    - Phase 2: Transactions - This would involve specifying the API endpoints required for a possible second mission once we've completed the first.
+
+At the end of the project, you'll present both deliverables to Avery Moreau, who manages Argent Bank's technical team.
+
+---
+
+# Back-End - Repository
 
 https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API
 
